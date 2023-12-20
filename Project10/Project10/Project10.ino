@@ -15,6 +15,7 @@ int motorSpeed = 0;
 int motorDirection = 1;
 
 void setup() {
+    Serial.begin(9600);
     pinMode(directionSwitchPin, INPUT);
     pinMode(onOffSwitchStateSwitchPin, INPUT);
     pinMode(controlPin1, OUTPUT);
@@ -54,4 +55,15 @@ void loop() {
     } else {
         analogWrite(enablePin, 0);
     }
+    Serial.print("Pin 2: ");
+    Serial.print(digitalRead(controlPin1));
+    Serial.print(", Pin 3: ");
+    Serial.print(digitalRead(controlPin2));
+    Serial.print(", Pin 9: ");
+    Serial.print(analogRead(enablePin));
+    Serial.print(", Switch State: ");
+    Serial.print(onOffSwitchState);
+    Serial.print(", Previous Switch State: ");
+    Serial.println(previousOnOffSwitchState);
+    //Serial.println(digitalRead(onOffSwitchStateSwitchPin));
 }
