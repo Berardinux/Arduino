@@ -7,7 +7,7 @@ void setup() {
   size(1, 1);
   surface.setResizable(true);
   colorMode(HSB, 255);
-  logo = loadImage("/home/berardinux/Pictures/Icon's/Profile and Signature/Berardinux/Berardinux_white.png");
+  logo = loadImage("../Berardinux_white.png");
   surface.setSize(logo.width, logo.height);
   Port = new Serial(this, "/dev/ttyACM0", 9600);
 }
