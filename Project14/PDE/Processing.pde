@@ -4,7 +4,7 @@ PImage logo;
 int bgcolor = 0;
 
 void setup() {
-  size(1, 1);
+  size(800, 800);
   surface.setResizable(true);
   colorMode(HSB, 255);
   logo = loadImage("../Berardinux_white.png");
@@ -15,7 +15,7 @@ void setup() {
 void draw() {
   while (Port.available() > 0) {
     bgcolor = Port.read();
-    println("Received value: " + bgcolor);
+    println("Value received from Arduino: " + bgcolor);
   }
 
   background(bgcolor, 255, 255);
